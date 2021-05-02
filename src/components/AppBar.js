@@ -39,7 +39,7 @@ const AppBar = () => {
         src="https://assets1.lottiefiles.com/packages/lf20_fzqfthij.json"
         style={{ height: "70px", width: "70px", marginTop: "-12px" }}
       ></Player>
-      <h1 style={{ fontSize: "20px" }}>Microplastic Indicator</h1>
+      <h1 style={{ fontSize: "20px" }}>Slyx</h1>
       {/* <BrowserRouter> */}
       <ul>
         <li>

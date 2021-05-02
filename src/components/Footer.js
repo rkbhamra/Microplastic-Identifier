@@ -14,5 +14,5 @@ export default function Footer() {
     justifyContent: "center",
   };
 
-  return <div style={footer}>© 2021 MP Identifier</div>;
+  return <div style={footer}>© 2021 Slyx MicroPlastic Identifier</div>;
 }
