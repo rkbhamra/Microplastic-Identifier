@@ -27,3 +27,13 @@ blockquote {
   margin-top: 15%;
   font-family: "Work Sans";
 }
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal {
+  width: 200px;
+  height: 200px;
+}
