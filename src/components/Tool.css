@@ -6,3 +6,23 @@
   align-items: center;
   font-family: "Work Sans";
 }
+
+.left {
+  width: 50%;
+}
+
+.right {
+  width: 50%;
+}
+
+.frame {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 5%;
+}
+
+blockquote {
+  font-size: 2em;
+  font-family: "Work Sans";
+}
