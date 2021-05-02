@@ -1,0 +1,83 @@
+h1 {
+  font-family: "Work Sans";
+  font-weight: 800;
+  font-size: 5em;
+  width: 5em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: calc(39vh - 1em);
+}
+
+/* Style the rainbow text element. */
+.rainbow-text {
+  /* Create a conic gradient. */
+  /* Double percentages to avoid blur (#000 10%, #fff 10%, #fff 20%, ...). */
+  background: #8830cf;
+  background-color: #9734c5;
+  background: conic-gradient(
+    #bd63e7 16.666%,
+    #cf30a0 16.666%,
+    #c5347d 33.333%,
+    #f14377 33.333%,
+    #f18f43 50%,
+    #38da6e 50%,
+    #09c4a4 66.666%,
+    #30cdfd 66.666%,
+    #30cdfd 83.333%,
+    #2f99e0 83.333%
+  );
+
+  /* Set thee background size and repeat properties. */
+  background-size: 50%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Animate the text when loading the element. */
+  /* This animates it on page load and when hovering out. */
+  animation: rainbow-text-animation-rev 0.5s ease forwards;
+
+  cursor: pointer;
+}
+
+/* Add animation on hover. */
+.rainbow-text:hover {
+  animation: rainbow-text-animation 0.5s ease forwards;
+}
+
+/* Move the background and make it larger. */
+/* Animation shown when hovering over the text. */
+@keyframes rainbow-text-animation {
+  0% {
+    background-size: 50%;
+    background-position: 0 0;
+  }
+  20% {
+    background-size: 50%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 300%;
+    background-position: -9em 1em;
+  }
+}
+
+/* Move the background and make it smaller. */
+/* Animation shown when entering the page and after the hover animation. */
+@keyframes rainbow-text-animation-rev {
+  0% {
+    background-size: 300%;
+    background-position: -9em 1em;
+  }
+  20% {
+    background-size: 50%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 50%;
+    background-position: 0 0;
+  }
+}
