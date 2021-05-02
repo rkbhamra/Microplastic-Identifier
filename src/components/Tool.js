@@ -9,7 +9,9 @@ import Fade from "@material-ui/core/Fade";
 import { ThemeContext } from "./ThemeProvider";
 import AppBar from "./AppBar";
 import Footer from "./Footer";
-
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
+import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: "flex",
@@ -31,7 +33,13 @@ export default function Tool() {
   // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
   const toolContainer = {
     backgroundColor: state.theme.primary,
-    height: "90vh",
+    height: "100%",
+    padding: "6%",
+  };
+  const bottom = {
+    backgroundColor: state.theme.primary,
+    height: "20vh",
+    padding: "6%",
   };
   const text = {
     color: state.theme.text,
@@ -126,6 +134,30 @@ export default function Tool() {
               ></Player>
             </div>
           </div>
+        </div>
+        <div className="bottom-section" style={bottom}>
+          <Carousel width={300} autoPlay={true} infiniteLoop={true}>
+            <div className="bottom-section">
+              <img src="./1.png" />
+              <p className="legend">Legend 1</p>
+            </div>
+            <div>
+              <img src="./2.png" />
+              <p className="legend">Legend 2</p>
+            </div>
+            <div>
+              <img src="./3.png" />
+              <p className="legend">Legend 3</p>
+            </div>
+            <div>
+              <img src="./4.png" />
+              <p className="legend">Legend 3</p>
+            </div>
+            <div>
+              <img src="./5.png" />
+              <p className="legend">Legend 3</p>
+            </div>
+          </Carousel>
         </div>
       </div>
       <Footer></Footer>
