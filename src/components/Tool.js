@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
-// import "./Tool.css";
+import "./Toggle.css";
+import "./Tool.css";
+
 import { ThemeContext } from "./ThemeProvider";
 import AppBar from "./AppBar";
 import Footer from "./Footer";
@@ -26,12 +28,26 @@ export default function Tool() {
     borderRadius: "100px",
   };
 
+  const scan = () => {};
+
   return (
     <>
       <div style={toolContainer}>
-        <div>
-          <p>this is not done</p>
-          <button style={btn}>start scanning</button>
+        <div className="tool-container">
+          <blockquote
+            cite="https://onlinelibrary.wiley.com/doi/full/10.1002/aisy.201900153"
+            style={text}
+          >
+            "Microplastics (MPs) are a major environmental concern due to their
+            possible impact on water pollution, wildlife, and the food chain.
+            Reliable, rapid, and high‐throughput screening of MPs from other
+            components of a water sample after sieving and/or digestion is still
+            a highly desirable goal to avoid cumbersome visual analysis by
+            expert users under the optical microscope."
+          </blockquote>
+          <button className="button" style={btn} onClick={scan}>
+            start scanning
+          </button>
         </div>
       </div>
       <Footer></Footer>
