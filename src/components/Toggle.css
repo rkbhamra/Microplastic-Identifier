@@ -1,0 +1,5 @@
+.button:hover {
+  box-shadow: 0 5px 50px 0 #c5347d inset, 0 5px 50px 0 #c5347d,
+    0 5px 50px 0 #c5347d inset, 0 5px 50px 0 #c5347d;
+  text-shadow: 0 0 5px #c5347d;
+}
