@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://scheduler.distributed.computer/dcp-client/dcp-client.js"></script>
+    <script>
+      const compute = dcp.compute;
+      const $ = document.querySelector.bind(document);
+
+      function workFn(letter) {
+        progress();
+        return letter.toUpperCase();
+      }
+
+      async function go() {
+        let inputSet = Array.from($('#inputString').value);
+        let job = compute.for(inputSet, workFn);
+
+        job.on('readystatechange', (ev) => $('#taLeft').value += '\nReady State:' + ev);
+        job.on('result',           (ev) => $('#taRight').value += Object.entries(ev).join(' ').replace(/,/g,': '));
+
+        let resultSet = await job.exec();           
+        let allCaps = Array.from(resultSet).join(''); 
+        alert(allCaps);
+      }              
+    </script>
+  </head>
+  <body>
+    <p>
+      Enter a string to change to uppercase via the Distributed Computer:
+      <input type="text" id="inputString"><input type="button" value="Distribute" onclick="go()">
+    </p>
+    <div style='display: inline-block'>Ready State Change<br><textarea cols="65" rows="25" id="taLeft"></textarea></div>
+    <div style='display: inline-block'>Individual Results<br> <textarea cols="65" rows="25" id="taRight"></textarea></div>
+  </body>
+</html>
