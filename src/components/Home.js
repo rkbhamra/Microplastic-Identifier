@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "./Home.css";
 import { ThemeContext } from "./ThemeProvider";
 import AppBar from "./AppBar";
-
+import Footer from "./Footer";
 export default function Home() {
   const state = useContext(ThemeContext);
   const container = {
@@ -56,6 +56,7 @@ export default function Home() {
         </div>
         <img className="img" src="./dot.png"></img>
       </div>
+      <Footer />
     </>
   );
 }

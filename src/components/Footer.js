@@ -9,7 +9,10 @@ export default function Footer() {
     color: state.theme.text,
     width: "100%",
     height: "50px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   };
 
-  return <div style={footer}>footer</div>;
+  return <div style={footer}>© 2021 MP Identifier</div>;
 }

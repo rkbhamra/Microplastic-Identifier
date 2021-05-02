@@ -15,7 +15,11 @@ export default function Tool() {
   const text = {
     color: state.theme.text,
   };
-
+  const title = {
+    color: state.theme.text,
+    fontSize: "2.5em",
+    fontFamily: "Work Sans",
+  };
   const btn = {
     borderRadius: "25px",
     padding: "3px",
@@ -35,6 +39,11 @@ export default function Tool() {
     <>
       <div style={toolContainer}>
         <div className="tool-container">
+          <p style={title}>
+            Harness the Power of
+            <span className="rainbow-text"> Machine Learning</span> with
+            Holographic Imaging
+          </p>
           <button className="button" style={btn} onClick={scan}>
             start scanning
           </button>
@@ -55,6 +64,7 @@ export default function Tool() {
             <div className="right">
               <Player
                 autoplay
+                loop
                 src="https://assets9.lottiefiles.com/temp/lf20_iRxzMr.json"
                 style={{ height: "500px", width: "500px", paddingTop: "6px" }}
               ></Player>
